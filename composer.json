@@ -1,0 +1,37 @@
+{
+  "name": "kvarts/bcs-test-app",
+  "description": "BCS Test Application",
+  "type": "project",
+  "license": "MIT",
+  "require": {
+    "php": ">=7.4.0",
+    "yiisoft/yii2": "~2.0.14",
+    "ext-json": "*"
+  },
+  "require-dev": {
+  },
+  "scripts": {
+    "post-install-cmd": [
+      "yii\\composer\\Installer::postInstall"
+    ],
+    "post-create-project-cmd": [
+      "yii\\composer\\Installer::postCreateProject"
+    ]
+  },
+  "extra": {
+    "yii\\composer\\Installer::postCreateProject": {
+      "setPermission": [
+        {
+          "runtime": "0777",
+          "yii": "0755"
+        }
+      ]
+    }
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://asset-packagist.org"
+    }
+  ]
+}
